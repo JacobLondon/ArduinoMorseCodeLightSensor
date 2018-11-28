@@ -24,21 +24,26 @@ void setup(){
 }
 
 void loop(){
-  
+
+    bool buttonPressed = 0;
     char input, output = '\0';
     int i;
     input = read_input();
+    Serial.print(r_index);
+    Serial.print(", ");
     Serial.println(input);
     
-    if(r_index == 3)
-      input = 'r';
+    //if(r_ind
+    //  Serial.println("here");
+    //  input = 'r';ex == 3){
+    //}
     
     // the user is entering data
-    if(input == '0' || input == '1')
-      read_in[r_index++] = input;
+    //if(input == '0' || input == '1')
+    read_in[r_index++] = input;
 
     // the user wants to read
-    else
+    if(r_index == R_SIZE || buttonPressed)
     {
       // lookup read_in's string in the morse table
       output = lookup();
@@ -47,6 +52,7 @@ void loop(){
       if (output != '\0')
       {
         char_display[d_index++] = output;
+        Serial.println(output);
         s_print();
 
         // reset the read in array to have only nulls (terminate the string)
@@ -55,7 +61,7 @@ void loop(){
     }
 
     // prevent from reading out of the array
-    if (r_index > R_SIZE){
+    if (r_index >= R_SIZE){
       s_print();
       clear_read();
     }    
