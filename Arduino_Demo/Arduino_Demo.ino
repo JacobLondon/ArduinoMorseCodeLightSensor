@@ -3,14 +3,16 @@
 
 #include <string.h>
 
-#define R_SIZE 4
+#define R_SIZE 5  // length of 4 for a string of up inputs, null terminate at 5
 #define D_SIZE 10
 #define A0 0
+#define D13 13
 
 // longest morse letter is 4 long
 char read_in[R_SIZE] = { '\0' }; // initialize the read in array with null chars
 char char_display[D_SIZE] = { '\0' };
 int r_index, d_index;
+bool buttonPressed;
 
 const char *morse[] = { "01", "1000", "1010", "100", "0", "0010", "110", "0000", "00", "0111", "101", "0100", "11", "10", "111", "0110", "1101", "010", "000", "1", "001", "0001", "011", "1001", "1011", "1100" };
 
@@ -25,25 +27,19 @@ void setup(){
 
 void loop(){
 
-    bool buttonPressed = 0;
     char input, output = '\0';
     int i;
+    buttonPressed = get_press();
     input = read_input();
     Serial.print(r_index);
     Serial.print(", ");
     Serial.println(input);
     
-    //if(r_ind
-    //  Serial.println("here");
-    //  input = 'r';ex == 3){
-    //}
-    
-    // the user is entering data
-    //if(input == '0' || input == '1')
+    // read data
     read_in[r_index++] = input;
 
     // the user wants to read
-    if(r_index == R_SIZE || buttonPressed)
+    if(r_index == R_SIZE - 1 || buttonPressed)
     {
       // lookup read_in's string in the morse table
       output = lookup();
@@ -52,7 +48,6 @@ void loop(){
       if (output != '\0')
       {
         char_display[d_index++] = output;
-        Serial.println(output);
         s_print();
 
         // reset the read in array to have only nulls (terminate the string)
@@ -68,7 +63,7 @@ void loop(){
 
     if(d_index >= D_SIZE)
       clear_display();
-
+      
     delay(1000);
 }
 
@@ -116,6 +111,14 @@ char read_input(){
     return '0';
   else
     return '1';
+}
+
+bool get_press(){
+
+  if(digitalRead(D13) == 0)
+    return 1;
+  else
+    return 0;
 }
 
 void s_print()
