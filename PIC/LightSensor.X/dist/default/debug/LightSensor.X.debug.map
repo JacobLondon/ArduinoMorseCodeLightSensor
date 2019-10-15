@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v2.00\pic\dat\en_msgs.txt \
   -cs -h+dist/default/debug\LightSensor.X.debug.sym \
   --cmf=dist/default/debug\LightSensor.X.debug.cmf -z -Q18F4321 \
-  -oC:\Users\Jacob\AppData\Local\Temp\sc6o.2 --defsym=__MPLAB_BUILD=1 \
+  -oC:\Users\Jacob\AppData\Local\Temp\s5as.2 --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/debug/LightSensor.X.debug.map -E1 -ver=XC8 --acfsm=1493 \
   -ASTACK=080h-01f3h -pstack=STACK -ACODE=00h-01DBFh -ACONST=00h-01DBFh \
   -ASMALLCONST=0200h-02FFhx27,01D00h-01DBFh -AMEDIUMCONST=0200h-01DBFh \
@@ -21,7 +21,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\Jacob\AppData\Local\Temp\sc6o.o \
+  C:\Users\Jacob\AppData\Local\Temp\s5as.o \
   dist/default/debug\LightSensor.X.debug.o 
 
 Object code version is 3.11
@@ -34,7 +34,7 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Jacob\AppData\Local\Temp\sc6o.o
+C:\Users\Jacob\AppData\Local\Temp\s5as.o
                 init                                  0        0        4        0       0
                 idloc                            200000   200000        8   200000       0
                 config                           300000   300000        E   300000       0

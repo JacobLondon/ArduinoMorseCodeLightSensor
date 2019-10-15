@@ -752,13 +752,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 78:         PORTAbits.RA2 = 0;
 [e ( _cmd (1 -> -> 1 `i `uc ]
 "79
-[; ;main.c: 79:         delay(200 / 2);
+[; ;main.c: 79:         delay(400 / 2);
 [e ( _delay (1 -> -> 5 `i `ui ]
 "80
 [; ;main.c: 80:         PORTAbits.RA2 = 1;
 [e ( _cmd (1 -> -> 6 `i `uc ]
 "81
-[; ;main.c: 81:         delay(200 / 2);
+[; ;main.c: 81:         delay(400 / 2);
 [e ( _delay (1 -> -> 5 `i `ui ]
 "82
 [; ;main.c: 82: 
@@ -791,13 +791,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _PORTAbits 0 2 -> -> 0 `i `uc ]
 "95
 [; ;main.c: 95:           if (output != '\0')
-[e ( _delay (1 -> / -> 200 `i -> 2 `i `ui ]
+[e ( _delay (1 -> / -> 400 `i -> 2 `i `ui ]
 "96
 [; ;main.c: 96:           {
 [e = . . _PORTAbits 0 2 -> -> 1 `i `uc ]
 "97
 [; ;main.c: 97:             char_display[d_index++] = output;
-[e ( _delay (1 -> / -> 200 `i -> 2 `i `ui ]
+[e ( _delay (1 -> / -> 400 `i -> 2 `i `ui ]
 "99
 [; ;main.c: 99: 
 [e = _input ( _get_input ..  ]
@@ -1025,10 +1025,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 187: void print()
 [e = _ADCON1 -> -> 15 `i `uc ]
 "189
-[; ;main.c: 189: 
+[; ;main.c: 189:     delay(5);
 [e $ ! <= -> _result `i / -> 255 `i -> 3 `i 317  ]
 "190
-[; ;main.c: 190: 
+[; ;main.c: 190:     data(char_display[d_index - 1]);
 [e ) -> -> 48 `ui `uc ]
 [e $UE 313  ]
 [e $U 318  ]
@@ -1036,22 +1036,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 191:     delay(5);
 [e :U 317 ]
 "192
-[; ;main.c: 192: 
+[; ;main.c: 192: }
 [e ) -> -> 49 `ui `uc ]
 [e $UE 313  ]
 [e :U 318 ]
 "193
-[; ;main.c: 193: 
 [e :UE 313 ]
 }
 "195
-[; ;main.c: 195:     data(char_display[d_index - 1]);
 [v _get_press `(uc ~T0 @X0 1 ef ]
 {
 [e :U _get_press ]
 [f ]
 "197
-[; ;main.c: 197: }
 [e $ ! == -> . . _PORTAbits 1 1 `i -> 0 `i 320  ]
 "198
 [e ) -> -> 1 `i `uc ]
@@ -1072,13 +1069,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _print ]
 [f ]
+"205
+[e ( _delay (1 -> -> 5 `i `ui ]
+"206
+[e ( _data (1 -> *U + &U _char_display * -> -> - -> _d_index `i -> 1 `i `ui `ux -> -> # *U &U _char_display `ui `ux `uc ]
 "207
 [e ( _delay (1 -> -> 5 `i `ui ]
-"211
-[e ( _data (1 -> *U + &U _char_display * -> -> - -> _d_index `i -> 1 `i `ui `ux -> -> # *U &U _char_display `ui `ux `uc ]
-"212
-[e ( _delay (1 -> -> 5 `i `ui ]
-"213
+"208
 [e :UE 322 ]
 }
 [a 27C 49 49 49 49 0 ]

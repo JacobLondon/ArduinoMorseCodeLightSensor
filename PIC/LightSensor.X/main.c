@@ -21,7 +21,7 @@ void delay(unsigned int);
 
 #define R_SIZE 5  // length of 4 for a string of up inputs, null terminate at 5
 #define D_SIZE 16
-#define DIS_DELAY 200
+#define DIS_DELAY 400
 
 // longest morse letter is 4 long
 char read_in[R_SIZE] = { '\0' }; // initialize the read in array with null chars

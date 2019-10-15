@@ -252,7 +252,7 @@ text5 6C2 721 CODE 6C2 0
 %locals
 dist/default/debug\LightSensor.X.debug.o
 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic18f4321.h
-C:\Users\Jacob\AppData\Local\Temp\sc6o.
+C:\Users\Jacob\AppData\Local\Temp\s5as.
 645 650 0 CODE 0
 647 650 0 CODE 0
 650 650 0 CODE 0
@@ -330,10 +330,10 @@ main.c
 130 39A 0 CODE 0
 main.c
 203 60E 0 CODE 0
-207 60E 0 CODE 0
-211 61A 0 CODE 0
-212 642 0 CODE 0
-213 64E 0 CODE 0
+205 60E 0 CODE 0
+206 61A 0 CODE 0
+207 642 0 CODE 0
+208 64E 0 CODE 0
 main.c
 57 6EA 0 CODE 0
 58 6EC 0 CODE 0

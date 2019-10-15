@@ -4664,9 +4664,9 @@ void main(void) {
         buttonPressed = get_press();
 
         PORTAbits.RA2 = 0;
-        delay(200 / 2);
+        delay(400 / 2);
         PORTAbits.RA2 = 1;
-        delay(200 / 2);
+        delay(400 / 2);
 
         input = get_input();
 
@@ -4774,12 +4774,7 @@ char get_press(){
 
 void print()
 {
-
-
     delay(5);
-
-
-
     data(char_display[d_index - 1]);
     delay(5);
 }
